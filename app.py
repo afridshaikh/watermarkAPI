@@ -10,7 +10,8 @@ account_key =  "7zXsCWqv5Du6vnO7gf7qGVNDQZoU8HOi7kNeI20q/x9gyAHn3in6lUwBqNZGa0wO
 app = Flask(__name__)
 block_blob_service = BlockBlobService(account_name=account_name, account_key=account_key)
 
-
+@app.route("/test", methods=['GET']):
+	return "Running"
 
 @app.route("/", methods=['GET'])
 def watermark():
