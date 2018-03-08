@@ -49,7 +49,7 @@ def watermark():
 def watermarking():
 	subprocess.call("ffmpeg -i video.mp4 -f mp3 -ab 192000 -vn audio.mp3", shell=True)
 	in_file = ffmpeg.input('video.mp4')
-	overlay_file = ffmpeg.input('watermark.png')
+	overlay_file = ffmpeg.input('https://moviestarstorage.blob.core.windows.net/watermark-img/watermark.png')
 	stream = in_file.overlay(overlay_file)
 	output = ffmpeg.output(stream, "raw.mp4")
 	ffmpeg.run(output)
